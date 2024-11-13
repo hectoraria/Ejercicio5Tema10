@@ -2,26 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Ejercicio5Tema10.VM"
-             x:Class="Ejercicio5Tema10.MainPage">
+             x:Class="EjercicioU6.Views.MainPage">
+
     <ContentPage.BindingContext>
         <vm:ListaPersonasVM></vm:ListaPersonasVM>
     </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30"
-            Spacing="10">
+        Padding="30"
+        Spacing="10">
             <ListView ItemsSource="{Binding ListaPersonas}" SelectedItem="{Binding PersonaSeleccionada}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            
 
-                                <VerticalStackLayout Padding="10">
-                                    <Label Text="{Binding Nombre}" />
-                                    <Label Text="{Binding Apellidos}" />
-                                </VerticalStackLayout>
-                           
+
+                            <VerticalStackLayout Padding="10">
+                                <Label Text="{Binding Nombre}" />
+                                <Label Text="{Binding Apellidos}" />
+                            </VerticalStackLayout>
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -1,10 +1,15 @@
-﻿using ENT;
-using DAL;
+﻿using DAL;
+using ENT;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ejercicio5Tema10.VM
+namespace EjercicioU6.VM
 {
     public class ListaPersonasVM : INotifyPropertyChanged
     {
