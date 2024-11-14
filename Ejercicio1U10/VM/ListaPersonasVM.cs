@@ -10,9 +10,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EjercicioU10.VM
+namespace Ejercicio1U10.VM
 {
-    public class ListaPersonasVM : INotifyPropertyChanged
+    public class ListaPersonasVM
     {
         #region Atributos
         private ClsPersona personaSeleccionada;

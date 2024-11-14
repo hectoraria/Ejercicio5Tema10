@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Ejercicio1U10.VM"
+             x:Class="Ejercicio1U10.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:ListaPersonasVM></vm:ListaPersonasVM>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+                <ListView ItemsSource="{Binding ListaPersonas}" SelectedItem="{Binding PersonaSeleccionada}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <HorizontalStackLayout Padding="10">
+                                    <Image Source="{Binding Foto}" WidthRequest="50" HeightRequest="50"/>
+
+                                    <VerticalStackLayout Padding="10,0,0,0">
+                                        <Label Text="{Binding Nombre}" FontSize="Medium"/>
+                                        <Label Text="{Binding Apellidos}" FontSize="Small"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+        <VerticalStackLayout Grid.Row="1"
+            MinimumHeightRequest="50" MinimumWidthRequest="50">
+            <Button Text="Borrar"
+                    Command="{Binding Eliminar}"/>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
